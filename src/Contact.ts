@@ -1,12 +1,16 @@
-import Address from "./Address";
-import PhoneNumber from "./PhoneNumber";
+import Address from "./parts/Address";
+import EmailAdress from "./parts/EmailAdress";
+import PhoneNumber from "./parts/PhoneNumber";
+import CurrentIndicator from "./utils/CurrentIndicator";
+import SocialMediaAccount from "./parts/SocialMediaAccount";
+import PersonLink from "./links/PersonLink";
 
 export default interface Contact {
     // unique ID for each contact
     id?: number;
 
     // name of the contact
-    name: {
+    name?: {
         // we give you to the option to have either a full name or first, middle, and last names
         // some cultures don't have the concept of first, middle, and last names so we give you the option to use a full name
         fullname?: string;
@@ -21,14 +25,16 @@ export default interface Contact {
     }
 
     // address of the contact
-    address?: Address[];
+    address?: (Address & CurrentIndicator)[];
 
     // phone numbers of the contact
-    phoneNumbers?: PhoneNumber[];
+    phoneNumbers?: (PhoneNumber & CurrentIndicator)[];
 
-    // ideas for future expansion
-    // email addresses
-    // social media accounts
+    // email addresses of the contact
+    emailAddresses?: (EmailAdress & CurrentIndicator)[];
+
+    socialMedia?: (SocialMediaAccount & CurrentIndicator)[];
+
     // websites
 
     // birthday
@@ -39,15 +45,23 @@ export default interface Contact {
     // for example "this is my cousin on my mother's side"
     // or "this is the person who will be picking you up from the airport"
 
-    // tags
-    // catogories
-    // groups
+
+    tags?: string[];
+    catogories?: string[];
+    groups?: string[];
 
     // family relationships
     // like mother, father, children, siblings, etc.
     // relationship status
     // frindship status
     // friend groups
+
+    family?: (PersonLink & {relationship: string})[];
+    relationships?: (
+        PersonLink &
+        {relationshipType: 'marriage' | 'engagement' | 'dating' | 'friends' | 'coworkers' | 'boss' | 'employee' | 'other'} &
+        {notes?: string}
+    )[];
 
     // other relationships
     // like boss, coworker, employee, etc.
@@ -66,6 +80,13 @@ export default interface Contact {
     // dentists
     // lawyers
     // accountants
+
+    // work schedule
+    // like work hours
+    // work days
+    // shift
+    // vol continue schema (like 2 weeks on, 2 weeks off)
+    // etc.
     
     // numbers like
     // social security number
@@ -89,6 +110,8 @@ export default interface Contact {
     // allergies
     // medications
     // medical conditions
+    // blood type
+    // menstrual cycle
     // etc.
 
     // other personal information
@@ -99,10 +122,17 @@ export default interface Contact {
     // other personal information
     // like sexual orientation
 
-    // other personal information
-    // like
-    // education
-    // work history
+    // information about the person's pets
+    // like number of pets
+    // type of pets
+    // names of pets
+    // etc.
+
+    // information about the person's education
+    // like schools attended
+    // degrees earned
+    // graduation dates
+    // certificates earned
     // etc.
 
     // work related information
@@ -122,5 +152,12 @@ export default interface Contact {
     // relation history information
     // like how long you have known the person
     // how you met the person
+    // how you became friends
+    // who introduced you to the person
     // etc.
+
+    // other information
+    // like how you feel about the person
+    // what others think about the person
+    // who hates the person
 }

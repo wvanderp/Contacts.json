@@ -15,10 +15,4 @@ export default interface Address {
 
     // the type of address
     type?: "home" | "work" | "school" | "other";
-
-    // validitiy of the address
-    // is the address still in use or is it just here for historical purposes
-    valid?: boolean;
-    current?: boolean;
-    preferred?: boolean;
 }
