@@ -81,11 +81,33 @@ export default interface Contact {
     // lawyers
     // accountants
 
+    // information about sex and gender
+    // like
+    // gender at birth
+    // gender expression
+    // transgender status
+
+    // member of any organizations
+    // like
+    // clubs
+    // churches
+    // political parties
+    // etc.
+
     // work schedule
     // like work hours
     // work days
     // shift
     // vol continue schema (like 2 weeks on, 2 weeks off)
+    // etc.
+
+    // dietary restrictions and preferences
+    // like
+    // vegetarian
+    // vegan
+    // gluten free
+    // lactose intolerant
+    // allergies
     // etc.
     
     // numbers like
@@ -112,7 +134,8 @@ export default interface Contact {
     // medical conditions
     // blood type
     // menstrual cycle
-    // etc.
+    // vaccination status
+    // medical history
 
     // other personal information
     // like political affiliation
@@ -160,4 +183,31 @@ export default interface Contact {
     // like how you feel about the person
     // what others think about the person
     // who hates the person
+
+    // other information
+    // like
+    // languages spoken
+
+    // information about previous places lived
+    // like
+    // previous addresses
+    // place of birth
+
+    // stuff owned by the person
+    // like
+    // cars
+    // houses
+    // boats
+    // planes
+    
+
+    // technology used by the person
+    // like
+    // operating systems
+    // programming languages
+    // software used
+    // hardware used
+    // phone platform
+    // etc.
+
 }

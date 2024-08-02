@@ -14,6 +14,8 @@ This project is designed for people who want to use it and should accommodate an
 
 Even if this leads to choices you find inexcusable, we will try to explain why we made these choices. And then it is up to you to decide whether you want to use it. You have the freedom to fork the project and create your own version, empowering you to make the best decisions for your needs.
 
+This goes both ways, for example, this project can be used to capture the gender of a person, but aslo has a spot for the gender at birth. This is a choice we made, but you can choose to ignore this field if you want.
+
 ## General rules
 
 - Types should both have a structured and unstructured version of them.
